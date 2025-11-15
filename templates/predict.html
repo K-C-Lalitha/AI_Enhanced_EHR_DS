@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Process Image - AI EHR System</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <button class="btn-secondary" onclick="window.location.href='/'">← Back</button>
+      <h2>🧠 Image Processing & Clinical Note Generation</h2>
+    </div>
+
+
+    <div class="section">
+      <label>Upload MRI / CT Image:</label>
+      <input type="file" id="imageUpload" accept="image/*">
+      <button id="processBtn" class="btn-primary">Process Image</button>
+    </div>
+
+    <div class="images">
+      <div>
+        <h3>Original Image</h3>
+        <img id="originalImage" src="" alt="Original Image">
+      </div>
+      <div>
+        <h3>Enhanced Image</h3>
+        <img id="enhancedImage" src="" alt="Enhanced Image">
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>🩺 Generated Clinical Note</h3>
+      <pre id="clinicalNote"></pre>
+      <button id="refreshBtn" class="btn-secondary" onclick="window.location.reload()">🔄 Select Another Image</button>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
